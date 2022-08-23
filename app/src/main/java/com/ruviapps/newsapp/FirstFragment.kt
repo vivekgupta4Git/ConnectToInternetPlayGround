@@ -112,7 +112,9 @@ class FirstFragment : Fragment() {
                         append(HttpHeaders.Authorization,apikey)
                     }
             }
+
             binding.textviewFirst.text = response.readText()
+
             val responseFromNetwork : ResponseFromNetwork = client.get(BASE_URL){
                 contentType(ContentType.Application.Json)
                 url {
@@ -124,7 +126,7 @@ class FirstFragment : Fragment() {
                     append(HttpHeaders.Authorization,apikey)
                 }
             }
-            Log.i(NETWORK_TAG,"${responseFromNetwork.totalResults}")
+            Log.i(NETWORK_TAG,"${responseFromNetwork.articles}")
         }
 
 

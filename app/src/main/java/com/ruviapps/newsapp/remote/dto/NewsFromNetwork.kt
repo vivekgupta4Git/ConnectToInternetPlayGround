@@ -25,4 +25,5 @@ data class ResponseFromNetwork(
 object ArticlesSerializer
     : JsonTransformingSerializer< List<NewsFromNetwork>>(
     ListSerializer(NewsFromNetwork.serializer())
+
     )
