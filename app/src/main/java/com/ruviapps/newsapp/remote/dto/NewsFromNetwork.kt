@@ -6,20 +6,20 @@ import kotlinx.serialization.json.JsonTransformingSerializer
 
 @Serializable
 data class NewsFromNetwork(
-    val author : String,
-    val title : String,
-    val description : String,
-    val url : String,
-    val urlImage : String,
-    val publishedAt : String,
-    val content : String
+    val author : String?,
+    val title : String?,
+    val description : String?,
+    val url : String?,
+    val urlToImage : String?,
+    val publishedAt : String?,
+    val content : String?
 )
 @Serializable
 data class ResponseFromNetwork(
     val status : String,
     val totalResults : Int,
-  /*  @Serializable(with =ArticlesSerializer::class)
-    val articles : List<NewsFromNetwork>*/
+    @Serializable(with =ArticlesSerializer::class)
+    val articles : List<NewsFromNetwork>
 )
 
 object ArticlesSerializer
