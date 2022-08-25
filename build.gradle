@@ -2,10 +2,14 @@
 
 buildscript {
     ext.kotlin_version = '1.7.10'
-    repositories { mavenCentral() }
+    repositories {
+        google()
+        mavenCentral() }
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+        classpath "io.realm:realm-gradle-plugin:10.11.1"
+
     }
 }
 plugins {

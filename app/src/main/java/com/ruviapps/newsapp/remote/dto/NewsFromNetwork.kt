@@ -27,3 +27,24 @@ object ArticlesSerializer
     ListSerializer(NewsFromNetwork.serializer())
 
     )
+object SourcesSerializer
+    : JsonTransformingSerializer<List<ResponseFromSources>>(
+    ListSerializer(ResponseFromSources.serializer())
+    )
+
+@Serializable
+data class ResponseFromSources(
+    val status: String?,
+    val sources : List<Sources?>
+)
+
+@Serializable
+data class Sources(
+    val id : String?,
+    val name : String?,
+    val description : String?,
+    val url :String?,
+    val category : String?,
+    val language : String?,
+    val country : String?
+)
